@@ -150,6 +150,11 @@ EOF
     cd ..
 fi
 
+# Checkout the tested_hash
+cd vlc
+git checkout ${TESTED_HASH}
+cd ..
+
 ############
 # Make VLC #
 ############
