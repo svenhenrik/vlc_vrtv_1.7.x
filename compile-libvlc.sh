@@ -96,6 +96,8 @@ VLC_BOOTSTRAP_ARGS="\
     --enable-libarchive \
     --disable-libmpeg2 \
     --enable-soxr \
+    --disable-a52 \
+    --disable-gpl \
 "
 
 ###########################
@@ -132,7 +134,7 @@ VLC_CONFIGURE_ARGS="\
     --disable-sid \
     --disable-gme \
     --disable-tremor \
-    --enable-mad \
+    --disable-mad \
     --disable-dca \
     --disable-sdl-image \
     --enable-zvbi \
@@ -163,6 +165,8 @@ VLC_CONFIGURE_ARGS="\
     --disable-faad \
     --disable-x264 \
     --disable-schroedinger \
+    --disable-a52 \
+    --disable-gpl \
 "
 
 ########################

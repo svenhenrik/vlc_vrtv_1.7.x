@@ -70,8 +70,8 @@ LOCAL_LDLIBS := -L$(VLC_CONTRIB)/lib \
 	-ldl -lz -lm -llog \
 	-ldvbpsi -lmatroska -lebml -ltag \
 	-logg -lFLAC -ltheora -lvorbis \
-	-la52 -lsoxr \
-	-lavformat -lavcodec -lswscale -lavutil -lpostproc -lgsm -lopenjpeg \
+	-lsoxr \
+	-lavformat -lavcodec -lswscale -lavutil -lgsm -lopenjpeg \
 	-lliveMedia -lUsageEnvironment -lBasicUsageEnvironment -lgroupsock \
 	-lspeex -lspeexdsp \
 	-lxml2 -lpng -lgnutls -lgcrypt -lgpg-error \
@@ -80,7 +80,6 @@ LOCAL_LDLIBS := -L$(VLC_CONTRIB)/lib \
 	-lEGL -lGLESv2 -ljpeg \
 	-ldvdnav -ldvdread -ldvdcss \
 	-ldsm -ltasn1 \
-	-lmad \
 	-lzvbi \
 	-lssh2 \
 	-lmodplug \
