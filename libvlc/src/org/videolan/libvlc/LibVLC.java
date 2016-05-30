@@ -152,8 +152,7 @@ public class LibVLC extends VLCObject<LibVLC.Event> {
     private native void nativeRelease();
     private native void nativeSetUserAgent(String name, String http);
 
-    /* Load library before object instantiation */
-    static {
+    public static void init(String name) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD_MR1) {
             try {
                 if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.HONEYCOMB_MR1)
@@ -189,11 +188,16 @@ public class LibVLC extends VLCObject<LibVLC.Event> {
         }
 
         try {
-            System.loadLibrary("vlcjni");
-        } catch (UnsatisfiedLinkError ule) {
-            Log.e(TAG, "Can't load vlcjni library: " + ule);
-            /// FIXME Alert user
-            System.exit(1);
+            System.load(name);
+        } catch (UnsatisfiedLinkError | NullPointerException e1) {
+            Log.e(TAG, "Can't load user vlcjni library: " + e1);
+            try {
+                System.loadLibrary("vlcjni");
+            } catch (UnsatisfiedLinkError e2) {
+                Log.e(TAG, "Can't load vlcjni library: " + e2);
+                /// FIXME Alert user
+                System.exit(1);
+            }
         } catch (SecurityException se) {
             Log.e(TAG, "Encountered a security issue when loading vlcjni library: " + se);
             /// FIXME Alert user
