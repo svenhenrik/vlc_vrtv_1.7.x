@@ -153,6 +153,9 @@ fi
 # Checkout the tested_hash
 cd vlc
 git checkout ${TESTED_HASH}
+
+# Apply patch
+patch -p1 < ../vlc_${TESTED_HASH}.patch
 cd ..
 
 ############

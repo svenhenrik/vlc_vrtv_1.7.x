@@ -1,0 +1,26 @@
+diff --git a/contrib/src/ffmpeg/rules.mak b/contrib/src/ffmpeg/rules.mak
+index 032d66a..413bb30 100644
+--- a/contrib/src/ffmpeg/rules.mak
++++ b/contrib/src/ffmpeg/rules.mak
+@@ -19,6 +19,8 @@ FFMPEGCONF = \
+ 	--pkg-config="$(PKG_CONFIG)" \
+ 	--disable-doc \
+ 	--disable-encoder=vorbis \
++	--disable-decoder=dca \
++	--disable-decoder=ac3 \
+ 	--enable-libgsm \
+ 	--enable-libopenjpeg \
+ 	--disable-debug \
+diff --git a/extras/tools/packages.mak b/extras/tools/packages.mak
+index 4590a73..9071f86 100644
+--- a/extras/tools/packages.mak
++++ b/extras/tools/packages.mak
+@@ -41,7 +41,7 @@ RAGEL_URL=http://www.colm.net/files/ragel/ragel-$(RAGEL_VERSION).tar.gz
+ SED_VERSION=4.2.2
+ SED_URL=$(GNU)/sed/sed-$(SED_VERSION).tar.bz2
+ 
+-ANT_VERSION=1.9.6
++ANT_VERSION=1.9.7
+ ANT_URL=$(APACHE)/ant/binaries/apache-ant-$(ANT_VERSION)-bin.tar.bz2
+ 
+ PROTOBUF_VERSION := 2.6.1
