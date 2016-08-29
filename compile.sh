@@ -155,7 +155,9 @@ cd vlc
 git checkout ${TESTED_HASH}
 
 # Apply patch
-patch -p1 < ../vlc_${TESTED_HASH}.patch
+if ! patch -R -p1 --dry-run < ../vlc_${TESTED_HASH}.patch ; then
+      patch -p1 < ../vlc_${TESTED_HASH}.patch
+fi
 cd ..
 
 ############
